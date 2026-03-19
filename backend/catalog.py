@@ -23,6 +23,9 @@ def build_catalog():
             )
         elif source["type"] == "csv":
             connector = CsvConnector(source_id=source["source_id"], path=source["path"])
+        else:
+            print("Uncorrect type connector")
+            continue
 
         tables = connector.index_all()
 
@@ -30,7 +33,7 @@ def build_catalog():
             {
                 "source_id": source["source_id"],
                 "type": source["type"],
-                "tables": [asdict(t) for t in tables], 
+                "tables": [asdict(t) for t in tables],
             }
         )
 

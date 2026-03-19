@@ -14,6 +14,7 @@ class SearchResult:
 
 
 def search(query: str) -> list[SearchResult]:
+    """Необходимо подправить выдачу для колонок тк,необходимы уник значения колонок"""
     if not query:
         return []
     else:
@@ -48,7 +49,7 @@ def search(query: str) -> list[SearchResult]:
                                 preview=table["preview"],
                             )
                         )
-                for column in table["columns"]:  # колонки внутри таблицы
+                for column in table["columns"]:
                     if query.lower() in column["name"].lower():
                         result.append(
                             SearchResult(

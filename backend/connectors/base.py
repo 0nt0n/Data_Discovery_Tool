@@ -8,10 +8,10 @@ class ColumnMeta:
     """Класс описывающий колонку"""
 
     name: str
-    dtype: str  # "integer", "text", "float", "boolean"
-    sample_values: list[Any] = field(default_factory=list)  # до 5 значений
+    dtype: str
+    sample_values: list[Any] = field(default_factory=list)
     nullable: bool = True
-    is_sensitive: bool = False  # заполнит sensitivity.py позже
+    is_sensitive: bool = False
 
 
 @dataclass
@@ -19,10 +19,10 @@ class TableMeta:
     """Класс описывающий таблицу"""
 
     name: str
-    source_id: str  # например "netflix_db" или "customers_csv"
+    source_id: str
     row_count: int
     columns: list[ColumnMeta]
-    preview: list[dict] = field(default_factory=list)  # первые 3 строки целиком
+    preview: list[dict] = field(default_factory=list)
 
 
 class BaseConnector(ABC):
@@ -30,8 +30,8 @@ class BaseConnector(ABC):
     можно назвать шаблоном)"""
 
     def __init__(self, source_id: str, path: str):
-        self.source_id = source_id  # уникальный id источника
-        self.path = path  # путь к файлу
+        self.source_id = source_id
+        self.path = path
 
     @abstractmethod
     def list_tables(self) -> list[str]:

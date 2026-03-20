@@ -9,6 +9,9 @@ Thumbs.db
 # Логи и временные файлы
 *.log
 
+
+venv/
+data/
 data_prepare.ipynb
 catalog.json
-.test/
+test/

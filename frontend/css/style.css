@@ -1,0 +1,110 @@
+
+body {
+    background: #0f0f0f;
+    color: #e0e0e0;
+    font-family: monospace;
+    margin: 0;
+    padding: 16px;
+}
+
+input {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    padding: 6px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+button {
+    background: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    border-color: #888;
+}
+
+.container {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.results, .schema {
+    flex: 1;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 12px;
+    min-height: 300px;
+}
+
+.card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.card:hover {
+    border-color: #666;
+}
+
+.badge {
+    background: #333;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.content {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.panel {
+    flex: 1;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 12px;
+    min-height: 300px;
+}
+
+.hint {
+    color: #555;
+    font-size: 13px;
+}
+
+.score {
+    color: #888;
+    font-size: 12px;
+    float: right;
+}
+
+.type-table  { background: #1a3a2a; color: #4caf80; }
+.type-column { background: #1a2a3a; color: #4a9eff; }
+.type-value  { background: #3a2a1a; color: #ff9a4a; }
+
+.arrow { color: #555; margin: 0 4px; }
+.source { color: #888; }
+.column { color: #4a9eff; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; }
+th { text-align: left; color: #888; padding: 4px 8px; border-bottom: 1px solid #333; }
+td { padding: 4px 8px; border-bottom: 1px solid #222; }
+
+.table-scroll { overflow-x: auto; }
+
+header { margin-bottom: 16px; }
+header h1 { margin: 0; font-size: 20px; }
+header p { margin: 4px 0 0; color: #555; font-size: 13px; }

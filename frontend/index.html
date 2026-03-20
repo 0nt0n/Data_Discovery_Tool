@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Discovery Tool</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Data Discovery Tool</h1>
+        <p>Search across your data sources</p>
+    </header>
+
+    <main>
+        <!-- поиск -->
+        <div class="search-bar">
+            <input 
+                type="text" 
+                id="query" 
+                placeholder="Search tables, columns, values..."
+                onkeydown="if(event.key==='Enter') doSearch()"
+            >
+            <button onclick="doSearch()">Search</button>
+        </div>
+
+        <div class="content">
+            <!-- левая панель — результаты -->
+            <div class="panel" id="results-panel">
+                <h2>Results</h2>
+                <div id="results">
+                    <p class="hint">Enter a query to start searching</p>
+                </div>
+            </div>
+            <!-- правая панель — схема -->
+            <div class="panel" id="schema-panel">
+                <h2>Schema</h2>
+                <div id="schema">
+                    <p class="hint">Click a result to see schema</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const API = 'http://localhost:8000'
+
+        async function doSearch() {
+            const q = document.getElementById('query').value.trim()
+            if (!q) return
+
+            document.getElementById('results').innerHTML = '<p class="hint">Loading...</p>'
+
+            const res = await fetch(`${API}/search?q=${encodeURIComponent(q)}`)
+            const data = await res.json()
+
+            if (data.length === 0) {
+                document.getElementById('results').innerHTML = '<p class="hint">Nothing found</p>'
+                return
+            }
+
+            document.getElementById('results').innerHTML = data.map(r => `
+                <div class="card" onclick="loadSchema('${r.source_id}', '${r.table}')">
+                    <div class="card-header">
+                        <span class="badge type-${r.type}">${r.type}</span>
+                        <span class="score">${r.score}</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="source">${r.source_id}</span>
+                        <span class="arrow">→</span>
+                        <span class="table">${r.table}</span>
+                        ${r.column ? `<span class="arrow">→</span><span class="column">${r.column}</span>` : ''}
+                    </div>
+                </div>
+            `).join('')
+        }
+
+        async function loadSchema(source_id, table) {
+            document.getElementById('schema').innerHTML = '<p class="hint">Loading...</p>'
+
+            const res = await fetch(`${API}/schema/${source_id}/${table}`)
+            const data = await res.json()
+
+            const cols = data.columns.map(c => `
+                <tr>
+                    <td>${c.name}</td>
+                    <td><span class="badge">${c.dtype}</span></td>
+                    <td>${c.sample_values.join(', ')}</td>
+                </tr>
+            `).join('')
+
+            const preview = data.preview.map(row => `
+                <tr>${Object.values(row).map(v => `<td>${v}</td>`).join('')}</tr>
+            `).join('')
+
+            const previewHeaders = Object.keys(data.preview[0]).map(k => `<th>${k}</th>`).join('')
+
+            document.getElementById('schema').innerHTML = `
+                <h3>${data.name}</h3>
+                <p class="hint">${data.row_count} rows · ${data.columns.length} columns</p>
+
+                <h4>Columns</h4>
+                <table>
+                    <thead><tr><th>Name</th><th>Type</th><th>Samples</th></tr></thead>
+                    <tbody>${cols}</tbody>
+                </table>
+
+                <h4>Preview</h4>
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr>${previewHeaders}</tr></thead>
+                        <tbody>${preview}</tbody>
+                    </table>
+                </div>
+            `
+        }
+    </script>
+
+</body>
+</html>

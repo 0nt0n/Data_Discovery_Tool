@@ -1,0 +1,697 @@
+{
+  "sources": [
+    {
+      "source_id": "main_db",
+      "type": "sqlite",
+      "tables": [
+        {
+          "name": "users",
+          "source_id": "main_db",
+          "row_count": 100,
+          "columns": [
+            {
+              "name": "user_id",
+              "dtype": "integer",
+              "sample_values": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "name",
+              "dtype": "text",
+              "sample_values": [
+                "James Martinez",
+                "John Miller",
+                "Emma Davis",
+                "Emma Miller",
+                "Jane Smith"
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "age",
+              "dtype": "integer",
+              "sample_values": [
+                18,
+                23,
+                60,
+                44,
+                68
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "country",
+              "dtype": "text",
+              "sample_values": [
+                "France",
+                "USA",
+                "UK",
+                "Canada",
+                "Mexico"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "subscription_type",
+              "dtype": "text",
+              "sample_values": [
+                "Premium",
+                "Basic",
+                "Standard"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "watch_time_hours",
+              "dtype": "real",
+              "sample_values": [
+                80.26,
+                321.75,
+                35.89,
+                261.56,
+                909.3
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "favorite_genre",
+              "dtype": "text",
+              "sample_values": [
+                "Drama",
+                "Sci-Fi",
+                "Comedy",
+                "Documentary",
+                "Romance"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "last_login",
+              "dtype": "text",
+              "sample_values": [
+                "2024-05-12",
+                "2025-02-05",
+                "2025-01-24",
+                "2024-03-25",
+                "2025-01-14"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            }
+          ],
+          "preview": [
+            {
+              "user_id": 1,
+              "name": "James Martinez",
+              "age": 18,
+              "country": "France",
+              "subscription_type": "Premium",
+              "watch_time_hours": 80.26,
+              "favorite_genre": "Drama",
+              "last_login": "2024-05-12"
+            },
+            {
+              "user_id": 2,
+              "name": "John Miller",
+              "age": 23,
+              "country": "USA",
+              "subscription_type": "Premium",
+              "watch_time_hours": 321.75,
+              "favorite_genre": "Sci-Fi",
+              "last_login": "2025-02-05"
+            },
+            {
+              "user_id": 3,
+              "name": "Emma Davis",
+              "age": 60,
+              "country": "UK",
+              "subscription_type": "Basic",
+              "watch_time_hours": 35.89,
+              "favorite_genre": "Comedy",
+              "last_login": "2025-01-24"
+            }
+          ]
+        },
+        {
+          "name": "social_media_users",
+          "source_id": "main_db",
+          "row_count": 100000,
+          "columns": [
+            {
+              "name": "UserID",
+              "dtype": "integer",
+              "sample_values": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "Name",
+              "dtype": "text",
+              "sample_values": [
+                "Jesse Lawhorn",
+                "Stacy Payne",
+                "Katrina Nicewander",
+                "Eric Yarbrough",
+                "Daniel Adkins"
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "Gender",
+              "dtype": "text",
+              "sample_values": [
+                "Female",
+                "Male"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "DOB",
+              "dtype": "text",
+              "sample_values": [
+                "1958-10-15",
+                "2004-07-21",
+                "2000-02-07",
+                "1985-04-14",
+                "1955-09-18"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Interests",
+              "dtype": "text",
+              "sample_values": [
+                "'Movies', 'Fashion', 'Fashion', 'Books'",
+                "'Gaming', 'Finance and investments', 'Outdoor activities', 'Travel'",
+                "'DIY and crafts', 'Music', 'Science', 'Fashion'",
+                "'Outdoor activities', 'Cars and automobiles'",
+                "'Politics', 'History'"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "City",
+              "dtype": "text",
+              "sample_values": [
+                "Sibolga",
+                "Al Aby\u0101r",
+                "W\u0101d\u012b as S\u012br",
+                "Matera",
+                "Biruaca"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Country",
+              "dtype": "text",
+              "sample_values": [
+                "Indonesia",
+                "Libya",
+                "Jordan",
+                "Italy",
+                "Venezuela"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            }
+          ],
+          "preview": [
+            {
+              "UserID": 1,
+              "Name": "Jesse Lawhorn",
+              "Gender": "Female",
+              "DOB": "1958-10-15",
+              "Interests": "'Movies', 'Fashion', 'Fashion', 'Books'",
+              "City": "Sibolga",
+              "Country": "Indonesia"
+            },
+            {
+              "UserID": 2,
+              "Name": "Stacy Payne",
+              "Gender": "Female",
+              "DOB": "2004-07-21",
+              "Interests": "'Gaming', 'Finance and investments', 'Outdoor activities', 'Travel'",
+              "City": "Al Aby\u0101r",
+              "Country": "Libya"
+            },
+            {
+              "UserID": 3,
+              "Name": "Katrina Nicewander",
+              "Gender": "Female",
+              "DOB": "2000-02-07",
+              "Interests": "'DIY and crafts', 'Music', 'Science', 'Fashion'",
+              "City": "W\u0101d\u012b as S\u012br",
+              "Country": "Jordan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "customers_csv",
+      "type": "csv",
+      "tables": [
+        {
+          "name": "customer_sample_500",
+          "source_id": "customers_csv",
+          "row_count": 500,
+          "columns": [
+            {
+              "name": "ID",
+              "dtype": "integer",
+              "sample_values": [
+                5524,
+                2174,
+                4141,
+                6182,
+                5324
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "Year_Birth",
+              "dtype": "integer",
+              "sample_values": [
+                1957,
+                1954,
+                1965,
+                1984,
+                1981
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "Education",
+              "dtype": "text",
+              "sample_values": [
+                "Graduation",
+                "PhD",
+                "Master",
+                "Basic",
+                "2n Cycle"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Marital_Status",
+              "dtype": "text",
+              "sample_values": [
+                "Single",
+                "Together",
+                "Married",
+                "Divorced",
+                "Widow"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Income",
+              "dtype": "float",
+              "sample_values": [
+                58138.0,
+                46344.0,
+                71613.0,
+                26646.0,
+                58293.0
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "Kidhome",
+              "dtype": "integer",
+              "sample_values": [
+                0,
+                1,
+                2
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "Teenhome",
+              "dtype": "integer",
+              "sample_values": [
+                0,
+                1,
+                2
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "MntWines",
+              "dtype": "integer",
+              "sample_values": [
+                635,
+                11,
+                426,
+                173,
+                520
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "MntMeatProducts",
+              "dtype": "integer",
+              "sample_values": [
+                546,
+                6,
+                127,
+                20,
+                118
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "MntFishProducts",
+              "dtype": "integer",
+              "sample_values": [
+                172,
+                2,
+                111,
+                10,
+                46
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "MntSweetProducts",
+              "dtype": "integer",
+              "sample_values": [
+                88,
+                1,
+                21,
+                3,
+                27
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "MntGoldProds",
+              "dtype": "integer",
+              "sample_values": [
+                88,
+                6,
+                42,
+                5,
+                15
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "NumWebPurchases",
+              "dtype": "integer",
+              "sample_values": [
+                8,
+                1,
+                2,
+                5,
+                6
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "NumStorePurchases",
+              "dtype": "integer",
+              "sample_values": [
+                4,
+                2,
+                10,
+                6,
+                7
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "NumCatalogPurchases",
+              "dtype": "integer",
+              "sample_values": [
+                10,
+                1,
+                2,
+                0,
+                3
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Recency",
+              "dtype": "integer",
+              "sample_values": [
+                58,
+                38,
+                26,
+                94,
+                16
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "NumWebVisitsMonth",
+              "dtype": "integer",
+              "sample_values": [
+                7,
+                5,
+                4,
+                6,
+                8
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Response",
+              "dtype": "integer",
+              "sample_values": [
+                1,
+                0
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Complain",
+              "dtype": "integer",
+              "sample_values": [
+                0,
+                1
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            }
+          ],
+          "preview": [
+            {
+              "ID": 5524,
+              "Year_Birth": 1957,
+              "Education": "Graduation",
+              "Marital_Status": "Single",
+              "Income": 58138.0,
+              "Kidhome": 0,
+              "Teenhome": 0,
+              "MntWines": 635,
+              "MntMeatProducts": 546,
+              "MntFishProducts": 172,
+              "MntSweetProducts": 88,
+              "MntGoldProds": 88,
+              "NumWebPurchases": 8,
+              "NumStorePurchases": 4,
+              "NumCatalogPurchases": 10,
+              "Recency": 58,
+              "NumWebVisitsMonth": 7,
+              "Response": 1,
+              "Complain": 0
+            },
+            {
+              "ID": 2174,
+              "Year_Birth": 1954,
+              "Education": "Graduation",
+              "Marital_Status": "Single",
+              "Income": 46344.0,
+              "Kidhome": 1,
+              "Teenhome": 1,
+              "MntWines": 11,
+              "MntMeatProducts": 6,
+              "MntFishProducts": 2,
+              "MntSweetProducts": 1,
+              "MntGoldProds": 6,
+              "NumWebPurchases": 1,
+              "NumStorePurchases": 2,
+              "NumCatalogPurchases": 1,
+              "Recency": 38,
+              "NumWebVisitsMonth": 5,
+              "Response": 0,
+              "Complain": 0
+            },
+            {
+              "ID": 4141,
+              "Year_Birth": 1965,
+              "Education": "Graduation",
+              "Marital_Status": "Together",
+              "Income": 71613.0,
+              "Kidhome": 0,
+              "Teenhome": 0,
+              "MntWines": 426,
+              "MntMeatProducts": 127,
+              "MntFishProducts": 111,
+              "MntSweetProducts": 21,
+              "MntGoldProds": 42,
+              "NumWebPurchases": 8,
+              "NumStorePurchases": 10,
+              "NumCatalogPurchases": 2,
+              "Recency": 26,
+              "NumWebVisitsMonth": 4,
+              "Response": 0,
+              "Complain": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "laptop_users_csv",
+      "type": "csv",
+      "tables": [
+        {
+          "name": "Laptop-Users",
+          "source_id": "laptop_users_csv",
+          "row_count": 20,
+          "columns": [
+            {
+              "name": "Age",
+              "dtype": "integer",
+              "sample_values": [
+                14,
+                34,
+                42,
+                30,
+                16
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "Gender",
+              "dtype": "text",
+              "sample_values": [
+                "male",
+                "female"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Region",
+              "dtype": "text",
+              "sample_values": [
+                "city",
+                "countryside"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Occupation",
+              "dtype": "text",
+              "sample_values": [
+                "student",
+                "teacher",
+                "banker",
+                "officer"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            },
+            {
+              "name": "Income",
+              "dtype": "integer",
+              "sample_values": [
+                0,
+                22000,
+                24000,
+                25000,
+                20000
+              ],
+              "nullable": true,
+              "is_sensitive": true
+            },
+            {
+              "name": "Has Laptop",
+              "dtype": "text",
+              "sample_values": [
+                "no",
+                "yes"
+              ],
+              "nullable": true,
+              "is_sensitive": false
+            }
+          ],
+          "preview": [
+            {
+              "Age": 14,
+              "Gender": "male",
+              "Region": "city",
+              "Occupation": "student",
+              "Income": 0,
+              "Has Laptop": "no"
+            },
+            {
+              "Age": 34,
+              "Gender": "female",
+              "Region": "city",
+              "Occupation": "teacher",
+              "Income": 22000,
+              "Has Laptop": "no"
+            },
+            {
+              "Age": 42,
+              "Gender": "male",
+              "Region": "countryside",
+              "Occupation": "banker",
+              "Income": 24000,
+              "Has Laptop": "yes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

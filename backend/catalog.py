@@ -5,11 +5,7 @@ from backend.connectors.csv import CsvConnector
 from .sensitivity import is_sensitive
 
 SOURCES = [
-    {
-        "source_id": "main_db",
-        "type": "sqlite",
-        "path": "data/main.db"
-    },
+    {"source_id": "main_db", "type": "sqlite", "path": "data/main.db"},
     {
         "source_id": "customers_csv",
         "type": "csv",
@@ -19,7 +15,7 @@ SOURCES = [
         "source_id": "laptop_users_csv",
         "type": "csv",
         "path": "data/Laptop-Users.csv",
-    }
+    },
 ]
 
 

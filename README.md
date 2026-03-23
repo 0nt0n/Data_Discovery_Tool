@@ -68,18 +68,26 @@ pytest tests/ -v
 Data_Discovery_Tool/
 ├── backend/
 │   ├── connectors/
+│   │   ├── __init__.py
 │   │   ├── base.py         # абстрактный интерфейс коннектора
 │   │   ├── sqlite.py       # коннектор для SQLite
 │   │   └── csv.py          # коннектор для CSV
+│   ├── __init__.py
 │   ├── catalog.py          # построение и загрузка каталога
-│   ├── search.py           # keyword + fuzzy поиск
+│   ├── search.py           # поиск
 │   ├── sensitivity.py      # определение чувствительных данных
 │   └── mcp_server.py       # FastAPI MCP сервер
 ├── frontend/
-│   └── index.html          # UI для поиска
+│   ├── index.html          # UI для поиска
+│   └── style.css           # стили
 ├── data/                   # источники данных
-├── tests/                  # pytest тесты
-├── catalog.json            # сгенерированный индекс
+├── tests/
+│   ├── __init__.py
+│   ├── test_connectors.py
+│   ├── test_search.py
+│   └── test_mcp.py
+├── requirements.txt
+├── catalog.json          
 └── README.md
 ```
 

@@ -6,7 +6,7 @@
 
 - `data/main.db` — SQLite база данных с таблицами: `users`, `social_media_users`
 - `data/customer_sample_500.csv` — CSV с 500 записями клиентов
-- `data/products.csv` — CSV с 200 записями продуктов
+- `data/Laptop-Users.csv` — CSV с 200 записями продуктов
 
 ## Установка
 

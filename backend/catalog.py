@@ -2,14 +2,24 @@ import json
 from dataclasses import asdict
 from backend.connectors.sqlite import SqliteConnector
 from backend.connectors.csv import CsvConnector
+from .sensitivity import is_sensitive
 
 SOURCES = [
-    {"source_id": "netflix_db", "type": "sqlite", "path": "data/netflix.db"},
+    {
+        "source_id": "main_db",
+        "type": "sqlite",
+        "path": "data/main.db"
+    },
     {
         "source_id": "customers_csv",
         "type": "csv",
         "path": "data/customer_sample_500.csv",
     },
+    {
+        "source_id": "laptop_users_csv",
+        "type": "csv",
+        "path": "data/Laptop-Users.csv",
+    }
 ]
 
 
@@ -28,6 +38,11 @@ def build_catalog():
             continue
 
         tables = connector.index_all()
+
+        for table in tables:
+            for column in table.columns:
+                if is_sensitive(column.name):
+                    column.is_sensitive = True
 
         catalog["sources"].append(
             {

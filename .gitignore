@@ -6,12 +6,19 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Логи и временные файлы
-*.log
-catalog.json
-.DS_Store
+# Python
 __pycache__/
 *.pyc
 *.pyo
+
+# Виртуальное окружение
 venv/
-data_prepare.ipynb
+
+# Генерируемые файлы
+catalog.json
+
+# Jupyter
+*.ipynb
+
+# Логи
+*.log
